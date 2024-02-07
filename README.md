@@ -1,4 +1,4 @@
-# API AWS Tarea
+# API AWS Tareas
 ![Static Badge](https://img.shields.io/badge/Estado%20-%20Terminado%20-%20green)
 ## Introducción
 Proyecto personal para aplicar mis conocimientos en AWS y Serverless.
@@ -109,9 +109,9 @@ Para poder realizar las peticiones debe seguir el siguiente el siguiente patrón
 ```
 https://{api}{endpoint}
 ```
-Por ejemplo en caso de estar utilizando en linea y querer obtener las canjes:
+Por ejemplo en caso de estar utilizando en linea y quiera ingresar un usuario:
 ```
-https://mi-compras.onrender.com/canjes
+https://82imkjzfa5.execute-api.sa-east-1.amazonaws.com/api/ingresarUsuario
 ```
 
 ### Tipo de datos
