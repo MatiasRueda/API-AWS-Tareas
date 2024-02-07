@@ -36,42 +36,38 @@ Proyecto individual.
 </br>
 
 ## Estructura
+
 ```
-Mi_compras_servidor
+Tareas-API-AWS
 ├─ .gitignore
 ├─ package-lock.json
 ├─ package.json
 ├─ README.md
-├─ src
-│  ├─ auxiliar
-│  │  ├─ mensaje.ts
-│  │  ├─ path.ts
-│  │  ├─ tabla.ts
-│  │  └─ type.ts
-│  ├─ controller
-│  │  ├─ get.controllers.ts
-│  │  ├─ post.controllers.ts
-│  │  └─ put.controllers.ts
-│  ├─ database
-│  │  ├─ database.ts
-│  │  └─ peticion.ts
-│  ├─ express.ts
-│  ├─ index.ts
-│  ├─ route
-│  │  ├─ get.routes.ts
-│  │  ├─ post.routes.ts
-│  │  └─ put.routes.ts
-│  └─ test
-│     ├─ auxiliar
-│     │  └─ ejemplos.ts
-│     ├─ database
-│     │  └─ peticion.test.ts
-│     └─ rutas
-│        ├─ get.test.ts
-│        ├─ post.test.ts
-│        └─ put.test.ts
-├─ tsconfig.json
-└─ tsconfig.spec.json
+├─ serverless.yml
+└─ src
+   ├─ auxiliar
+   │  ├─ definicion.ts
+   │  ├─ respuesta.ts
+   │  └─ types.ts
+   ├─ controller
+   │  ├─ delete
+   │  │  └─ eliminarTarea.ts
+   │  ├─ post
+   │  │  ├─ agregarTarea.ts
+   │  │  ├─ ingresarUsuario.ts
+   │  │  └─ registrarUsuario.ts
+   │  └─ put
+   │     └─ actualizarTarea.ts
+   ├─ database
+   │  └─ database.ts
+   ├─ index.ts
+   └─ middlewares
+      ├─ hayRequestBody.ts
+      ├─ tipoBodyTarea.ts
+      ├─ tipoBodyUsuario.ts
+      ├─ tipoTarea.ts
+      ├─ verificarTareaToken.ts
+      └─ verificarToken.ts
 
 ```
 </br>
