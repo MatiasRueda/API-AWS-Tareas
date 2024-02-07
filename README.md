@@ -242,7 +242,7 @@ Se agrega una tarea, es necesario estar autenticado
 Es necesario enviar en el header el token de la siguiente manera 
 ```json
 {
-	"Authorization": "123"
+  "Authorization": "123"
 }
 ```
 > En este caso "123" representa al token que se debe enviar
@@ -289,7 +289,7 @@ Modifica los valores de la tarea que se elija
 Es necesario enviar en el header el token de la siguiente manera 
 ```json
 {
-	"Authorization": "123"
+  "Authorization": "123"
 }
 ```
 El Request Body que se debe enviar:
@@ -333,7 +333,7 @@ Elimina una tarea.
 Es necesario enviar en el header el token de la siguiente manera 
 ```json
 {
-	"Authorization": "123"
+  "Authorization": "123"
 }
 ```
 En caso de que todo haya salido bien se tendrá una <a href="#respuesta">**Respuesta**</a> de este estilo:
