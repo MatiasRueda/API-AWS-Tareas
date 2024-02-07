@@ -1,0 +1,95 @@
+service: tareas-API
+frameworkVersion: '3'
+
+provider:
+  httpApi:
+    cors: true
+  name: aws
+  runtime: nodejs18.x
+  region: sa-east-1
+  environment:
+    SECRETO: secreto
+    EXPIRACION: 600
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+          Resource:
+            - arn:aws:dynamodb:sa-east-1:471112918334:table/Tarea
+            - arn:aws:dynamodb:sa-east-1:471112918334:table/TareaUsuario
+
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+          
+  agregarTarea:
+    handler: src/controller/post/agregarTarea.agregarTarea
+    events:
+      - httpApi:
+          path: /api/auth/agregarTarea
+          method: post
+
+  ingresarUsuario:
+    handler: src/controller/post/ingresarUsuario.ingresarUsuario
+    events:
+      - httpApi:
+          path: /api/ingresarUsuario
+          method: post
+
+  registrarUsuario:
+    handler: src/controller/post/registrarUsuario.registrarUsuario
+    events:
+      - httpApi:
+          path: /api/registrarUsuario
+          method: post
+
+  actualizarTarea:
+    handler: src/controller/put/actualizarTarea.actualizarTarea
+    events:
+      - httpApi:
+          path: /api/auth/actualizarTarea
+          method: put
+
+  eliminarTarea:
+    handler: src/controller/delete/eliminarTarea.eliminarTarea
+    events:
+      - httpApi:
+          path: /api/auth/eliminarTarea/{id}
+          method: delete
+
+resources: 
+  Resources:
+    TareaTabla:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Tarea
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id 
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+
+    UsuarioTabla:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: TareaUsuario
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id 
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
