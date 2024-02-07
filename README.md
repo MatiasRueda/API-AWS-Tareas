@@ -38,7 +38,7 @@ Proyecto individual.
 ## Estructura
 
 ```
-Tareas-API-AWS
+API-AWS-Tareas
 ├─ .gitignore
 ├─ package-lock.json
 ├─ package.json
