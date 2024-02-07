@@ -1,7 +1,7 @@
 # API AWS Tareas
 ![Static Badge](https://img.shields.io/badge/Estado%20-%20Terminado%20-%20green)
 ## Introducción
-Proyecto personal para aplicar mis conocimientos en AWS y Serverless.
+Proyecto personal para aplicar mis conocimientos en AWS y Serverless. </br>
 La API ofrece a los usuarios la posibilidad de guardar tareas, actualizarlas y eliminarlas. </br>
 Para esto será necesario que se registren e ingresen
 </br>
